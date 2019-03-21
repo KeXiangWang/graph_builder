@@ -11,16 +11,16 @@ Written with Visual Studio 2017 under Windows 10.
 >Explanation for the Controller File.
 
 The front rows are for defination of files. 
-For each row:
-	The first string should be the name of the file. (the loaction could be raletive of absolutely both and can be changed in function: TableParser::parse)
-	The following strings are the title of the correspond volumns, which imply the real meaning of the data. They are seperated by a *tab*.
-	Each row have a potential title "table_x", which means it's **x**th table. And it is designed for the condition that there need a vertex without any meaningful infomation. 
+For each row:  
+&emsp;The first string should be the name of the file. (the loaction could be raletive of absolutely both and can be changed in function: TableParser::parse)  
+&emsp;The following strings are the title of the correspond volumns, which imply the real meaning of the data. They are seperated by a *tab*.  
+&emsp;Each row have a potential title "table_x", which means it's **x**th table. And it is designed for the condition that there need a vertex without any meaningful infomation.  
 
-After the rows for defination, the subsequent row should be a designated row with text, "edges:".
-Then the following rows are description of edges.
-For each row:
-	The first string and the second string are the titles defined in the front rows. They are seperated by a *tab*.
-	It means there may be a edge between the first string and the second string. If in a row of one file, the two strings appears at the same time, the program will make an edge from the first string to the second string and give the edge a label.
+After the rows for defination, the subsequent row should be a designated row with text, "edges:".  
+Then the following rows are description of edges.  
+For each row:  
+&emsp;The first string and the second string are the titles defined in the front rows. They are seperated by a *tab*.  
+&emsp;It means there may be a edge between the first string and the second string. If in a row of one file, the two strings appears at the same time, the program will make an edge from the first string to the second string and give the edge a label.  
 
 #### Example
 >Controller File
@@ -68,5 +68,5 @@ table_0_table_0_10
 table_0_table_0_11
 table_0_table_0_12
 ```
-The prefixes are attached for distinguishing integers between different volumns. 
+The prefixes are attached for distinguishing integers between different volumns.  
 The ones with a profix "table_x_table_x_" are the vertexes without any meaningful information. 
