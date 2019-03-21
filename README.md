@@ -10,7 +10,7 @@ Written with Visual Studio 2017 under Windows 10.
 #### Control File Grammar
 >Explanation for the Controller File.
 
-The front rows are for defination of files. 
+The front rows are for defination of files.  
 For each row:  
 &emsp;The first string should be the name of the file. (the loaction could be raletive of absolutely both and can be changed in function: TableParser::parse)  
 &emsp;The following strings are the title of the correspond volumns, which imply the real meaning of the data. They are seperated by a *tab*.  
@@ -50,9 +50,9 @@ uid_u2	opp_num_a1	uid_to_opp_num
 uid_u2	opp_num_b1	uid_to_opp_num
 uid_u2	opp_num_c1	uid_to_opp_num
 ```
+The third strings are the given labels.  
 
 >Output of Vertexes(partly)
-The third strings are the given labels.
 ```html
 opp_num_a1
 opp_num_b1
@@ -69,4 +69,4 @@ table_0_table_0_11
 table_0_table_0_12
 ```
 The prefixes are attached for distinguishing integers between different volumns.  
-The ones with a profix "table_x_table_x_" are the vertexes without any meaningful information. 
+The ones with a profix "table_x_table_x_" are the vertexes without any meaningful information.  
