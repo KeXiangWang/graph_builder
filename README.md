@@ -68,5 +68,5 @@ table_0_table_0_10
 table_0_table_0_11
 table_0_table_0_12
 ```
-The prefixes are attached for distinguishing integers between different volumns.  
+The prefixes are attached for distinguishing integers from different volumns.  
 The ones with a profix "table_x_table_x_" are the vertexes without any meaningful information.  
