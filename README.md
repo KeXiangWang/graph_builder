@@ -1,7 +1,7 @@
-# Project written for a general graph builder.
+# A General Graph Builder.
 
 #### Introduction
-It is a graph builder for the LianTong's project. With a file used to control which edges are potential edges, It quickly build a graph contains edges and vertexes. 
+It is a graph builder written for the LianTong's project. With a file used to control, in which potential edges and the types of vertexes are defined, it can quickly build a graph contains edges and vertexes. 
 
 #### Programming Language and Environment
 Written in object-oriented C++ 11.
