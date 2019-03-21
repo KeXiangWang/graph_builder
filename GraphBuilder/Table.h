@@ -9,13 +9,11 @@ public:
 		types.emplace_back("table_" + std::to_string(tableCount++));
 	};
 	~Table();
-	void addTypeName(string &typeNameString) {
-		types.emplace_back(typeNameString);
-	};
-
+	void addTypeName(string &typeNameString);
+	int find(string &str);
 	string tableName;
 	vector<string> types;
-//private:
+private:
 	static int tableCount;
 };
 

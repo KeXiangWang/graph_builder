@@ -10,3 +10,7 @@ Graph::Graph()
 Graph::~Graph()
 {
 }
+
+void Graph::outputGraph()
+{
+}
