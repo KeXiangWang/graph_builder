@@ -43,7 +43,7 @@ void TableParser::openFile(string &fileName, fstream &file) {
 void TableParser::transfer(Table & table, vector<Edge*>& potentialEdges, vector<EdgeRecord*> &edgeRecords)
 {
 	for (auto iter = potentialEdges.begin(); iter != potentialEdges.end(); iter++) {
-		int a = table.find((*iter)->first); 
+		int a = table.find((*iter)->first);
 		int b = table.find((*iter)->second);
 		if (a >= 0 && b >= 0) {
 			edgeRecords.emplace_back(new EdgeRecord(a, b, (*iter)->name));
@@ -61,15 +61,18 @@ void TableParser::parse(Table &table, vector<Edge *> &potentialEdges, Graph &gra
 	transfer(table, potentialEdges, edgeRecords);
 	int count = 0;
 	while (parseLine(file, details)) {
-		details.insert(details.begin(), *table.types.begin() +"_"+ to_string(count++));
+		details.insert(details.begin(), *table.types.begin() + "_" + to_string(count++));
 		for (auto detail = details.begin(); detail != details.end(); detail++) {
 			std::cout << *detail << DEVIDE_STR;
-			graph.vertexes.insert(*(new Vertex(*detail)));
+			string info = table.types[detail - details.begin()] + "_" + *detail;
+			graph.vertexes.insert(*(new Vertex(info)));
 		}
 		for (auto iter = edgeRecords.begin(); iter != edgeRecords.end(); iter++) {
 			int a = (*iter)->first;
 			int b = (*iter)->second;
-			graph.edges.insert(*(new Edge(details[a], details[b], (*iter)->name)));
+			string first = table.types[a] + "_" + details[a];
+			string second = table.types[b] + "_" + details[b];
+			graph.edges.insert(*(new Edge(first, second, (*iter)->name)));
 		}
 		std::cout << std::endl;
 	}

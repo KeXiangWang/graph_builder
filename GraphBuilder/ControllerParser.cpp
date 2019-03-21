@@ -15,8 +15,8 @@ ControllerParser::~ControllerParser()
 {
 }
 
-void ControllerParser::readFile(vector<Table *> &tables, vector<Edge *> &potentialEdges) {
-	string fileName = "..\\..\\control.txt";
+void ControllerParser::readFile(string &fileName, vector<Table *> &tables, vector<Edge *> &potentialEdges) {
+	 
 	char buffer[STRING_LENGTH];
 	fstream controlFile = fstream(fileName, fstream::in);
 	bool parsingEdges = false;

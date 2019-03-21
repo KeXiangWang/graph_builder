@@ -1,0 +1,11 @@
+sms_train_small.txt	uid	opp_num	opp_head	opp_len	start_time	in_out		
+voice_train_small.txt	uid	opp_num	opp_head	opp_len	start_time	end_time	call_type	in_out
+wa_train_small.txt	uid	wa_name	visit_cnt	visit_dura	up_flow	down_flow	wa_type	date
+
+edges:
+uid	opp_num
+uid	table_0
+opp_head	opp_num
+opp_head	opp_len
+table_0	start_time
+table_0	in_out

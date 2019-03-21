@@ -8,7 +8,7 @@ class ControllerParser
 public:
 	ControllerParser();
 	~ControllerParser();
-	void readFile(vector<Table *> &tables, vector<Edge *> &potentialEdges);
+	void readFile(string &fileName, vector<Table *> &tables, vector<Edge *> &potentialEdges);
 	void checkFile(vector<Table *> &tables, vector<Edge *> &potentialEdges);
 };
 

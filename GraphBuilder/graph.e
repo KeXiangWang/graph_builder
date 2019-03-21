@@ -1,0 +1,17 @@
+opp_num_a1	opp_head_123	opp_num_to_opp_head
+opp_num_b1	opp_head_321	opp_num_to_opp_head
+opp_num_c1	opp_head_145	opp_num_to_opp_head
+opp_num_d1	opp_head_145	opp_num_to_opp_head
+uid_u1	opp_num_a1	uid_to_opp_num
+uid_u1	opp_num_c1	uid_to_opp_num
+uid_u2	opp_num_a1	uid_to_opp_num
+uid_u2	opp_num_b1	uid_to_opp_num
+uid_u2	opp_num_c1	uid_to_opp_num
+uid_u2	opp_num_d1	uid_to_opp_num
+uid_u3	opp_num_c1	uid_to_opp_num
+uid_u3	opp_num_d1	uid_to_opp_num
+uid_u4	opp_num_a1	uid_to_opp_num
+uid_u4	opp_num_b1	uid_to_opp_num
+uid_u4	opp_num_d1	uid_to_opp_num
+uid_u5	opp_num_b1	uid_to_opp_num
+uid_u5	opp_num_d1	uid_to_opp_num
