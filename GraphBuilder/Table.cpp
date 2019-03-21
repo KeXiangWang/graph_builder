@@ -1,18 +1,6 @@
 #include "pch.h"
 #include "Table.h"
+int Table::tableCount = 0;
 
-
-Table::Table()
-{
-}
-
-
-Table::~Table()
-{
-}
-
-void Table::addTableName(string tableNameString){
-}
-
-void Table::addTypeName(string typeNameString){
+Table::~Table() {
 }
