@@ -3,9 +3,17 @@
 #### Introduction
 It is a graph builder written for the LianTong's project. With a file used to control, in which potential edges and the types of vertexes are defined, it can quickly build a graph contains edges and vertexes. 
 
+This branch is updated for Linux compatibility. The defect of this version is that all of the vertexes and edges will be stored as strings, and subsequently outputed as integers. So the storing process wastes more than twice larger memory as the coming Linux_Integer version.
+
 #### Programming Language and Environment
 Written in object-oriented C++ 11.
-Written with Visual Studio 2017 under Windows 10.
+Written with Clion 2018.3.4 under Manjaro.
+System Version:
+&emsp;LSB Version:	n/a
+&emsp;Distributor ID:	ManjaroLinux
+&emsp;Description:	Manjaro Linux
+&emsp;Release:	18.0.4
+&emsp;Codename:	Illyria
 
 #### Control File Grammar
 >Explanation for the Controller File.
