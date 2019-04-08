@@ -3,7 +3,7 @@
 #### Introduction
 It is a graph builder written for the LianTong's project. With a file used to control, in which potential edges and the types of vertexes are defined, it can quickly build a graph contains edges and vertexes. 
 
-This branch is updated for Linux compatibility. The defect of this version is that all of the vertexes and edges will be stored as strings, and subsequently outputed as integers. So the storing process wastes more than twice larger memory as the coming Linux_Integer version.
+This branch is updated for Linux compatibility. The defect of linux_string version has been solved. Now with this version, only about 16G memory can be able to accommodate the larger LianTong's project's running. 
 
 #### Programming Language and Environment
 Written in object-oriented C++ 11.
