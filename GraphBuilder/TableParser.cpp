@@ -47,7 +47,7 @@ void TableParser::openFile(string &fileName, fstream &file) {
     //std::cout << buffer << std::endl;
 }
 
-void TableParser::transfer(Table &table, vector<Edge *> &potentialEdges, vector<EdgeRecord *> &edgeRecords) {
+void TableParser::transfer(Table &table, vector<TypeEdge *> &potentialEdges, vector<EdgeRecord *> &edgeRecords) {
     for (auto iter = potentialEdges.begin(); iter != potentialEdges.end(); iter++) {
         int a = table.find((*iter)->first);
         int b = table.find((*iter)->second);
@@ -57,7 +57,7 @@ void TableParser::transfer(Table &table, vector<Edge *> &potentialEdges, vector<
     }
 }
 
-void TableParser::parse(Table &table, vector<Edge *> &potentialEdges, Graph &graph, Dictionary &dictionary) {
+void TableParser::parse(Table &table, vector<TypeEdge *> &potentialEdges, Graph &graph, Dictionary &dictionary) {
     string fileName = "../" + table.tableName;
     fstream file;
     openFile(fileName, file);
@@ -70,7 +70,10 @@ void TableParser::parse(Table &table, vector<Edge *> &potentialEdges, Graph &gra
         for (auto detail = details.begin(); detail != details.end(); detail++) {
 //            std::cout << *detail <<std::endl;
             string info = table.types[detail - details.begin()] + "_" + *detail;
-            graph.vertexes.insert(*(new Vertex(info, table.types[detail - details.begin()])));
+            dictionary.vertexInsert(info);
+//            std::cout << "cao ??? " << info << " what the fuck " << table.types[detail - details.begin()] <<std::endl;
+//            std::cout << "cao ??? " << dictionary.getVertexInt(info) << " what the fuck " << dictionary.getLabelInt(table.types[detail - details.begin()]) << std::endl;
+            graph.vertexes.insert(*(new Vertex(dictionary.getVertexInt(info), dictionary.getLabelInt(table.types[detail - details.begin()]) )));
         }
         for (auto iter = edgeRecords.begin(); iter != edgeRecords.end(); iter++) {
             int a = (*iter)->first;
@@ -78,10 +81,11 @@ void TableParser::parse(Table &table, vector<Edge *> &potentialEdges, Graph &gra
             string first = table.types[a] + "_" + details[a];
             string second = table.types[b] + "_" + details[b];
 //             TODO check
-            dictionary.vertexInsert(first);
-            dictionary.vertexInsert(second);
+//            dictionary.vertexInsert(first);
+//            dictionary.vertexInsert(second);
             dictionary.edgeInsert((*iter)->name);
-            graph.edges.insert(*(new Edge(first, second, (*iter)->name)));
+            graph.edges.insert(*(new VertexEdge(dictionary.getVertexInt(first), dictionary.getVertexInt(second),
+                                                dictionary.getEdgeInt((*iter)->name))));
         }
         std::cout << details[0] << std::endl;
     }

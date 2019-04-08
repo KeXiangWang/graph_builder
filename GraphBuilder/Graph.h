@@ -33,22 +33,20 @@ public:
                 efile << iter.first << DEVIDE_STR << iter.second << DEVIDE_STR << iter.name << std::endl;
             }
         } else {
-            for (auto &iter :vertexes) {
-                vfile << dictionary.getVertexInt(iter.name) << DEVIDE_STR << dictionary.getLabelInt(iter.label)
-                      << std::endl;
-            }
-            for (auto &iter:edges) {
-                efile << dictionary.getVertexInt(iter.first) << DEVIDE_STR << dictionary.getVertexInt(iter.second)
-                      << DEVIDE_STR << dictionary.getEdgeInt(iter.name) << std::endl;
-            }
+//            for (auto &iter :vertexes) {
+//                vfile << dictionary.getVertexInt(iter.name) << DEVIDE_STR << dictionary.getLabelInt(iter.label)
+//                      << std::endl;
+//            }
+//            for (auto &iter:edges) {
+//                efile << dictionary.getVertexInt(iter.first) << DEVIDE_STR << dictionary.getVertexInt(iter.second)
+//                      << DEVIDE_STR << dictionary.getEdgeInt(iter.name) << std::endl;
+//            }
         }
-
-
     };
 
 
 private:
     set<Vertex> vertexes;
-    set<Edge> edges;
+    set<VertexEdge> edges;
 };
 

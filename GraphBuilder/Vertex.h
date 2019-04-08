@@ -7,14 +7,14 @@ class Vertex
 {
 	friend class Graph;
 public:
-	Vertex(string &name, string &label) : name(name), label(label) {};
+	Vertex(int name, int label) : name(name), label(label) {};
 	~Vertex() = default;
 	friend bool operator<(const Vertex& v1, const Vertex& v2)
 	{
 		return v1.name < v2.name;
 	}
-private:
-	string name;
-	string label;
+//private:
+	int name;
+	int label;
 };
 

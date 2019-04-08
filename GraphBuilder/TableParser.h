@@ -26,11 +26,11 @@ public:
 
     ~TableParser() = default;
 
-    void parse(Table &table, vector<Edge *> &potentialEdges, Graph &graph, Dictionary &dictionary);
+    void parse(Table &table, vector<TypeEdge *> &potentialEdges, Graph &graph, Dictionary &dictionary);
 
     bool parseLine(fstream &file, vector<string> &details);
 
     void openFile(string &fileName, fstream &file);
 
-    void transfer(Table &table, vector<Edge *> &potentialEdges, vector<EdgeRecord *> &edgeRecords);
+    void transfer(Table &table, vector<TypeEdge *> &potentialEdges, vector<EdgeRecord *> &edgeRecords);
 };

@@ -13,7 +13,7 @@ using std::cin;
 using std::fstream;
 
 
-void ControllerParser::readFile(string &fileName, vector<Table *> &tables, vector<Edge *> &potentialEdges,
+void ControllerParser::readFile(string &fileName, vector<Table *> &tables, vector<TypeEdge *> &potentialEdges,
                                 Dictionary &dictionary) {
 
     char buffer[STRING_LENGTH];
@@ -40,7 +40,7 @@ void ControllerParser::readFile(string &fileName, vector<Table *> &tables, vecto
             cout << second << "\t" << endl;
             string firstName(first);
             string secondName(second);
-            potentialEdges.emplace_back(new Edge(firstName, secondName));
+            potentialEdges.emplace_back(new TypeEdge(firstName, secondName));
         } else {
             char *tableName = nullptr;
             char *next = nullptr;
@@ -70,16 +70,16 @@ void ControllerParser::readFile(string &fileName, vector<Table *> &tables, vecto
     controlFile.close();
 }
 
-void ControllerParser::checkFile(vector<Table *> &tables, vector<Edge *> &potentialEdges) {
-    for (auto table = tables.begin(); table != tables.end(); table++) {
-        cout << endl << (*table)->tableName << endl;
-        for (auto name = (*table)->types.begin(); name != (*table)->types.end(); name++) {
-            cout << (*name) << DEVIDE_STR;
+void ControllerParser::checkFile(vector<Table *> &tables, vector<TypeEdge *> &potentialEdges) {
+    for (auto table :tables) {
+        cout << endl << table->tableName << endl;
+        for (auto &name : table->types) {
+            cout << name << DEVIDE_STR;
         }
     }
     cout << endl;
-    for (auto edge = potentialEdges.begin(); edge != potentialEdges.end(); edge++) {
-        cout << (*edge)->name << endl;
+    for (auto edge :potentialEdges) {
+        cout << edge->name << endl;
     }
 }
 

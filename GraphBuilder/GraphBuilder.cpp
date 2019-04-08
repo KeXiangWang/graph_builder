@@ -12,7 +12,7 @@ using std::endl;
 
 int main() {
     vector<Table *> tables;
-    vector<Edge *> potentialEdges;
+    vector<TypeEdge *> potentialEdges;
     ControllerParser controllerParser;
     Dictionary dictionary = *(new Dictionary());
     string fileName = "../control.txt";
@@ -26,7 +26,7 @@ int main() {
     }
     string vFileName = "graph.v";
     string eFileName = "graph.e";
-    graph.outputGraph(vFileName, eFileName, dictionary, false);
+    graph.outputGraph(vFileName, eFileName, dictionary, true);
     // TODO check
     string vDictFileName = "dictV.txt";
     string eDictFileName = "dictE.txt";
