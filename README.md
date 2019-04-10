@@ -49,6 +49,7 @@ table_0	start_time
 table_0	in_out
 ```
 
+&nbsp;
 > **Output of Edges(partly): "graph.e"**
 ```html
 1	3	2
@@ -67,6 +68,7 @@ Notes:
 
 The third column contains the corresponding integers of the edge attributes combined sources' labels and targets' labels.  
 
+&nbsp;
 > **Output of Vertexes(partly): "graph.v"**
 ```html
 1	1
@@ -86,7 +88,7 @@ Notes:
 The prefixes are attached for distinguishing integers from different volumns.  
 The ones with a profix "table_x_table_x_" are the vertexes without any meaningful information.  
 
-
+&nbsp;
 > **Output of Edge Attribute Dictionary(partly): "dictE.txt"**
 ```html
 opp_num_to_opp_head	3
@@ -105,6 +107,7 @@ Notes:
 
 The edge attributes has the format like A_to_B, in which A is source'label and B is target's label.  
 
+&nbsp;
 > **Output of Vertex Dictionary(partly): "dictV.txt"**
 ```html
 call_end_time_02	47
@@ -124,7 +127,7 @@ Notes:
 The prefixes "tabel_x_" are attached for distinguishing integers from different volumns.  
 The ones with a profix "table_x_table_x_" are the vertexes without any meaningful information.  
 
-
+&nbsp;
 > **Output of Vertex Label Dictionary(partly): "dictL.txt"**
 ```html
 call_end_time	10
