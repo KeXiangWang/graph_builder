@@ -34,7 +34,7 @@ For each row:
 - It means there may be a edge between the first string and the second string. If in a row of one file, the two strings appears at the same time, the program will make an edge from the first string to the second string and give the edge a label.  
 
 ### Example
->Controller File
+> **Controller File: "control.txt"**
 ```html
 sms_train_small.txt	uid	opp_num	opp_head	opp_len	start_time	in_out		
 voice_train_small.txt	uid	opp_num	opp_head	opp_len	start_time	end_time	call_type	in_out
@@ -49,7 +49,7 @@ table_0	start_time
 table_0	in_out
 ```
 
->Output of Edges(partly): "graph.e"
+> **Output of Edges(partly): "graph.e"**
 ```html
 1	3	2
 1	6	5
@@ -63,11 +63,11 @@ table_0	in_out
 3	4	3
 ```
 
-#### Notes:
+Notes:
 
 The third column contains the corresponding integers of the edge attributes combined sources' labels and targets' labels.  
 
->Output of Vertexes(partly): "graph.v"
+> **Output of Vertexes(partly): "graph.v"**
 ```html
 1	1
 2	2
@@ -81,13 +81,13 @@ The third column contains the corresponding integers of the edge attributes comb
 10	7
 ```
 
-#### Notes:
+Notes:
 
 The prefixes are attached for distinguishing integers from different volumns.  
 The ones with a profix "table_x_table_x_" are the vertexes without any meaningful information.  
 
 
->Output of Edge Attribute Dictionary(partly): "dictE.txt"
+> **Output of Edge Attribute Dictionary(partly): "dictE.txt"**
 ```html
 opp_num_to_opp_head	3
 opp_num_to_opp_len	4
@@ -101,11 +101,11 @@ table_1_to_call_type	11
 table_1_to_opp_num	8
 ```
 
-#### Notes:
+Notes:
 
 The edge attributes has the format like A_to_B, in which A is source'label and B is target's label.  
 
->Output of Vertex Dictionary(partly): "dictV.txt"
+> **Output of Vertex Dictionary(partly): "dictV.txt"**
 ```html
 call_end_time_02	47
 call_end_time_03	36
@@ -119,13 +119,13 @@ table_0_table_0_1	8
 table_0_table_0_10	30
 ```
 
-#### Notes:
+Notes:
 
 The prefixes "tabel_x_" are attached for distinguishing integers from different volumns.  
 The ones with a profix "table_x_table_x_" are the vertexes without any meaningful information.  
 
 
->Output of Vertex Label Dictionary(partly): "dictL.txt"
+> **Output of Vertex Label Dictionary(partly): "dictL.txt"**
 ```html
 call_end_time	10
 call_in_out	12
