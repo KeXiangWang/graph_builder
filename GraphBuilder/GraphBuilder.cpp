@@ -15,7 +15,7 @@ int main() {
     vector<TypeEdge *> potentialEdges;
     ControllerParser controllerParser;
     Dictionary dictionary = *(new Dictionary());
-    string fileName = "../control.txt";
+    string fileName = "../control_pack.txt";
     controllerParser.readFile(fileName, tables, potentialEdges, dictionary);
 //	controllerParser.checkFile(tables, potentialEdges);
     TableParser tableParser;

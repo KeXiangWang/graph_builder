@@ -22,6 +22,7 @@ bool TableParser::parseLine(fstream &file, vector<string> &details) {
     if (!file.getline(buffer, STRING_LENGTH)) {
         return false;
     }
+//    std::cout << buffer <<std::endl;
     char *str = nullptr;
     str = strtok_r(buffer, DEVIDE_STR, &next);
     while (str != nullptr) {
@@ -42,8 +43,8 @@ void TableParser::openFile(string &fileName, fstream &file) {
         std::cout << "Error:" << fileName << " opened wrongly " << std::endl;
         exit(1);
     }
-    char buffer[100];
-    file.getline(buffer, STRING_LENGTH);
+//    char buffer[100];
+//    file.getline(buffer, STRING_LENGTH);
     //std::cout << buffer << std::endl;
 }
 
