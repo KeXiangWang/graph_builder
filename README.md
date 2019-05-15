@@ -7,6 +7,9 @@ It is a graph builder written for the LianTong's project. With a file used to co
 - This branch is updated for Linux compatibility. The defect of linux_string version has been solved. Now with this version, only about 16G memory can be able to accommodate the larger LianTong's project's running. 
 - **In this version, we start to use the word "attribute" to descibe label of edge, which keeps consistent with codes. And this change make it easier to distinguish edge attribute from vertex label.**
 
+### Run Instruction
+- An auto-run script is provided as ```run.sh```，to run which cmake is needed.  
+- Use different arguments, you can set the source and target to different path. 
 
 ### Programming Language and Environment  
 Written in object-oriented C++ 11.  

@@ -9,7 +9,7 @@ cmake-build-debug/dictV.txt
 cmake-build-debug/graph.e
 cmake-build-debug/graph.v
 # added lest git should upload the train data
-
+.idea/
 
 ### CLion ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm

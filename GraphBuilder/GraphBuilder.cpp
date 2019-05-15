@@ -16,10 +16,7 @@ int main(int argc, char **argv) {
     ControllerParser controllerParser;
     Dictionary dictionary = *(new Dictionary());
 //    ../control_pack.txt ../ . .
-    string argv_1;
-    string argv_2;
-    string argv_3;
-    string argv_4;
+    string argv_1, argv_2, argv_3, argv_4;
     if (argc == 1) {
         argv_1 = "../control_pack.txt";
         argv_2 = "../";
@@ -38,9 +35,7 @@ int main(int argc, char **argv) {
     string vDictFileName = argv_4 + string("/dictV.txt");
     string eDictFileName = argv_4 + string("/dictE.txt");
     string lDictFileName = argv_4 + string("/dictL.txt");
-
     fstream controlFile = fstream(fileName, fstream::in);
-
     controllerParser.readFile(fileName, dataset_directory, tables, potentialEdges, dictionary);
 //	controllerParser.checkFile(tables, potentialEdges);
     TableParser tableParser;
@@ -52,7 +47,6 @@ int main(int argc, char **argv) {
 
     graph.outputGraph(vFileName, eFileName, dictionary, true);
     // TODO check
-
     dictionary.printMap(vDictFileName, eDictFileName, lDictFileName);
     return 0;
 }
