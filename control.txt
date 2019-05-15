@@ -1,0 +1,27 @@
+sms_train_small.txt	uid	opp_num	opp_head	opp_len	msg_start_time	msg_in_out
+voice_train_small.txt	uid	opp_num	opp_head	opp_len	call_start_time	call_end_time	call_type	call_in_out
+wa_train_small.txt	uid	wa_name	visit_cnt	visit_dura	up_flow	down_flow	wa_type	date
+uid_train_small.txt	uid	is_fake
+
+edges:
+uid	is_fake
+uid	table_0
+table_0	opp_num
+opp_num	opp_head
+opp_num	opp_len
+table_0	msg_start_time
+table_0	msg_in_out
+uid	table_1
+table_1	opp_num
+table_1	call_start_time
+table_1	call_end_time
+table_1	call_type
+table_1	call_in_out
+uid	table_2
+table_2	wa_name
+table_2	wa_type
+table_2	visit_cnt
+table_2	visit_dura
+table_2	up_flow
+table_2	down_flow
+table_2	date
