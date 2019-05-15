@@ -16,6 +16,7 @@ int main(int argc, char **argv) {
     ControllerParser controllerParser;
     Dictionary dictionary = *(new Dictionary());
 //    ../control_pack.txt ../ . .
+    // test
     string argv_1, argv_2, argv_3, argv_4;
     if (argc == 1) {
         argv_1 = "../control_pack.txt";
