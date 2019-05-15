@@ -43,9 +43,6 @@ void TableParser::openFile(string &fileName, fstream &file) {
         std::cout << "Error:" << fileName << " opened wrongly " << std::endl;
         exit(1);
     }
-//    char buffer[100];
-//    file.getline(buffer, STRING_LENGTH);
-    //std::cout << buffer << std::endl;
 }
 
 void TableParser::transfer(Table &table, vector<TypeEdge *> &potentialEdges, vector<EdgeRecord *> &edgeRecords) {
@@ -59,7 +56,7 @@ void TableParser::transfer(Table &table, vector<TypeEdge *> &potentialEdges, vec
 }
 
 void TableParser::parse(Table &table, vector<TypeEdge *> &potentialEdges, Graph &graph, Dictionary &dictionary) {
-    string fileName = "../" + table.tableName;
+    string fileName = table.tableName;
     fstream file;
     openFile(fileName, file);
     vector<string> details;

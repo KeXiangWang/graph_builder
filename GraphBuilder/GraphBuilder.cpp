@@ -15,29 +15,44 @@ int main(int argc, char **argv) {
     vector<TypeEdge *> potentialEdges;
     ControllerParser controllerParser;
     Dictionary dictionary = *(new Dictionary());
-    string fileName = argv[1];
-    fstream controlFile = fstream(fileName, fstream::in);
-    if (!controlFile) {
-        std::cout << fileName << "没有被创建!" << std::endl;
+//    ../control_pack.txt ../ . .
+    string argv_1;
+    string argv_2;
+    string argv_3;
+    string argv_4;
+    if (argc == 1) {
+        argv_1 = "../control_pack.txt";
+        argv_2 = "../";
+        argv_3 = ".";
+        argv_4 = ".";
     } else {
-        std::cout << fileName << "已经存在!" << std::endl;
+        argv_1 = argv[1];
+        argv_2 = argv[2];
+        argv_3 = argv[3];
+        argv_4 = argv[4];
     }
-//    controllerParser.readFile(fileName, tables, potentialEdges, dictionary);
-////	controllerParser.checkFile(tables, potentialEdges);
-//    TableParser tableParser;
-//    Graph graph;
-//    for (auto &table :tables) {
-//        cout << endl << table->tableName << endl;
-//        tableParser.parse(*table, potentialEdges, graph, dictionary);
-//    }
-    string vFileName = argv[2] + string("/graph.v");
-    string eFileName = argv[2] + string("/graph.e");
-//    graph.outputGraph(vFileName, eFileName, dictionary, true);
+    string fileName = argv_1;
+    string dataset_directory = string(argv_2);
+    string vFileName = argv_3 + string("/graph.v");
+    string eFileName = argv_3 + string("/graph.e");
+    string vDictFileName = argv_4 + string("/dictV.txt");
+    string eDictFileName = argv_4 + string("/dictE.txt");
+    string lDictFileName = argv_4 + string("/dictL.txt");
+
+    fstream controlFile = fstream(fileName, fstream::in);
+
+    controllerParser.readFile(fileName, dataset_directory, tables, potentialEdges, dictionary);
+//	controllerParser.checkFile(tables, potentialEdges);
+    TableParser tableParser;
+    Graph graph;
+    for (auto &table :tables) {
+        cout << endl << table->tableName << endl;
+        tableParser.parse(*table, potentialEdges, graph, dictionary);
+    }
+
+    graph.outputGraph(vFileName, eFileName, dictionary, true);
     // TODO check
-    string vDictFileName = argv[3] + string("/dictV.txt");
-    string eDictFileName = argv[3] + string("/dictE.txt");
-    string lDictFileName = argv[3] + string("/dictL.txt");
-    std::cout << vFileName << eFileName << vDictFileName << eDictFileName << lDictFileName << std::endl;
-//    dictionary.printMap(vDictFileName, eDictFileName, lDictFileName);
+
+    dictionary.printMap(vDictFileName, eDictFileName, lDictFileName);
     return 0;
 }

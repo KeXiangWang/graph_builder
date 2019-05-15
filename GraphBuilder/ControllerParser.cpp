@@ -13,7 +13,8 @@ using std::cin;
 using std::fstream;
 
 
-void ControllerParser::readFile(string &fileName, vector<Table *> &tables, vector<TypeEdge *> &potentialEdges,
+void ControllerParser::readFile(string &fileName, string &directory, vector<Table *> &tables,
+                                vector<TypeEdge *> &potentialEdges,
                                 Dictionary &dictionary) {
 
     char buffer[STRING_LENGTH];
@@ -49,7 +50,7 @@ void ControllerParser::readFile(string &fileName, vector<Table *> &tables, vecto
             if (tableName == nullptr) {
                 continue;
             }
-            string tableNameString(tableName);
+            string tableNameString(directory + "/" + tableName);
             table = new Table(tableNameString);
             // TODO check
             dictionary.labelInsert(table->types[0]);
