@@ -3,7 +3,6 @@ voice_train_small.txt	uid	opp_num	opp_head	opp_len	call_start_time	call_end_time
 wa_train_small.txt	uid	wa_name	visit_cnt	visit_dura	up_flow	down_flow	wa_type	date
 uid_train_small.txt	uid	is_fake
 
-
 edges:
 uid	is_fake
 uid	table_0
