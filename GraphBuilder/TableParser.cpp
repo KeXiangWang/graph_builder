@@ -67,11 +67,8 @@ void TableParser::parse(Table &table, vector<TypeEdge *> &potentialEdges, Graph 
     while (parseLine(file, details)) {
         details.insert(details.begin(), *table.types.begin() + CONNECTOR_BETWEEN_LABEL_AND_VALUE + to_string(count++));
         for (auto detail = details.begin(); detail != details.end(); detail++) {
-            string info;
-            if (detail != details.begin())
-                info = table.types[detail - details.begin()] + CONNECTOR_BETWEEN_LABEL_AND_VALUE + *detail;
-            else
-                info = *detail;
+            string info = (detail == details.begin()) ? *detail : table.types[detail - details.begin()] +
+                                                                  CONNECTOR_BETWEEN_LABEL_AND_VALUE + *detail;
             dictionary.vertexInsert(info);
             graph.vertexes.insert(*(new Vertex(dictionary.getVertexInt(info),
                                                dictionary.getLabelInt(table.types[detail - details.begin()]))));
@@ -79,10 +76,13 @@ void TableParser::parse(Table &table, vector<TypeEdge *> &potentialEdges, Graph 
         for (auto iter : edgeRecords) {
             int a = iter->first;
             int b = iter->second;
-            string first = table.types[a] + "_" + details[a];
-            string second = table.types[b] + "_" + details[b];
+            string first = a == 0 ? details[a] : table.types[a] + CONNECTOR_BETWEEN_LABEL_AND_VALUE + details[a];
+            string second = b == 0 ? details[b] : table.types[b] + CONNECTOR_BETWEEN_LABEL_AND_VALUE + details[b];
 //             TODO check
             dictionary.edgeInsert(iter->name);
+//            std::cout << iter->name << std::endl;
+//            std::cout << dictionary.getVertexInt(first) << std::endl;
+//            std::cout << dictionary.getVertexInt(second) << std::endl;
             graph.edges.insert(*(new VertexEdge(dictionary.getVertexInt(first), dictionary.getVertexInt(second),
                                                 dictionary.getEdgeInt(iter->name))));
         }
