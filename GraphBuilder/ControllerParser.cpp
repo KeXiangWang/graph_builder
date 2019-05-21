@@ -27,9 +27,12 @@ void ControllerParser::readFile(string &fileName, string &directory, vector<Tabl
     }
     while (controlFile.getline(buffer, STRING_LENGTH, '\n')) {
         if (strcmp(buffer, "edges:") == 0) {
-            cout << "Start parsing edges." << endl;
+            cout << endl << "Start parsing edges." << endl<< endl;
             parsingEdges = true;
             continue;
+        }
+        if (buffer[strlen(buffer) - 1] == '\r') {
+            buffer[strlen(buffer) - 1] = '\0';
         }
         if (parsingEdges) {
             char *first = nullptr;
@@ -43,21 +46,23 @@ void ControllerParser::readFile(string &fileName, string &directory, vector<Tabl
             string secondName(second);
             potentialEdges.emplace_back(new TypeEdge(firstName, secondName));
         } else {
+            char *tablePath = nullptr;
             char *tableName = nullptr;
             char *next = nullptr;
             char *typeName = nullptr;
-            tableName = strtok_r(buffer, DEVIDE_STR, &next);
-            if (tableName == nullptr) {
+            tablePath = strtok_r(buffer, DEVIDE_STR, &next);
+            if (tablePath == nullptr) {
                 continue;
             }
-            string tableNameString(directory + "/" + tableName);
-            table = new Table(tableNameString);
-            // TODO check
+            tableName = strtok_r(nullptr, DEVIDE_STR, &next);
+            string tablePathString(directory + "/" + tablePath);
+            string tableNameString(tableName);
+            table = new Table(tableNameString, tablePathString);
             dictionary.labelInsert(table->types[0]);
+            // TODO check
             typeName = strtok_r(nullptr, DEVIDE_STR, &next);
             while (typeName != nullptr) {
                 string typeNameString(typeName);
-
                 table->addTypeName(typeNameString);
                 // TODO check
                 dictionary.labelInsert(typeNameString);

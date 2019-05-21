@@ -14,7 +14,7 @@ public:
 class TypeEdge:public Edge{
 public:
     TypeEdge(string &first, string &second) : first(first), second(second) {
-        this->name = first + "_to_" + second;
+        this->name = first + "@" + second;
     };
 
     ~TypeEdge() = default;
