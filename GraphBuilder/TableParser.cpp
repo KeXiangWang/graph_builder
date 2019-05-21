@@ -68,12 +68,13 @@ void TableParser::parse(Table &table, vector<TypeEdge *> &potentialEdges, Graph 
         details.insert(details.begin(), *table.types.begin() + CONNECTOR_BETWEEN_LABEL_AND_VALUE + to_string(count++));
         for (auto detail = details.begin(); detail != details.end(); detail++) {
             string info;
-            if(detail!= details.begin())
+            if (detail != details.begin())
                 info = table.types[detail - details.begin()] + CONNECTOR_BETWEEN_LABEL_AND_VALUE + *detail;
             else
                 info = *detail;
             dictionary.vertexInsert(info);
-            graph.vertexes.insert(*(new Vertex(dictionary.getVertexInt(info), dictionary.getLabelInt(table.types[detail - details.begin()]) )));
+            graph.vertexes.insert(*(new Vertex(dictionary.getVertexInt(info),
+                                               dictionary.getLabelInt(table.types[detail - details.begin()]))));
         }
         for (auto iter : edgeRecords) {
             int a = iter->first;

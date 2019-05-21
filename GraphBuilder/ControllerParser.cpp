@@ -27,7 +27,7 @@ void ControllerParser::readFile(string &fileName, string &directory, vector<Tabl
     }
     while (controlFile.getline(buffer, STRING_LENGTH, '\n')) {
         if (strcmp(buffer, "edges:") == 0) {
-            cout << endl << "Start parsing edges." << endl<< endl;
+            cout << endl << "Start parsing edges." << endl << endl;
             parsingEdges = true;
             continue;
         }
